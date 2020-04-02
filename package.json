@@ -1,0 +1,19 @@
+{
+  "name": "reactnativetutorial",
+  "version": "1.0.0",
+  "description": "Following The Net Ninjas tutorial to create a React Native app.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jawad727/ReactNativeTutorial.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jawad727/ReactNativeTutorial/issues"
+  },
+  "homepage": "https://github.com/jawad727/ReactNativeTutorial#readme"
+}
