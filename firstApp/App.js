@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Button, FlatList } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, FlatList } from 'react-native';
 
 export default function App() {
 
@@ -14,24 +14,29 @@ export default function App() {
     { name: "ghandi", id: "8" }
   ])
 
+   const pressHandler = (id) => {
+    console.log(id);
+    setPeople((prevPeople) => { // prevPeople (or any arg in set___ hook refers to the old state)
+      return prevPeople.filter(item => item.id != id)
+    });
+  }
+
   return (
     <View style={styles.container}>
 
-    <FlatList // FlatList is more efficient than ScrollView because  it doesnt automatically render everything, but rather waits until you've scrolled to render
-      numColumns={1}
-      keyExtractor={(item) => item.id} //allows us to have IDs or other attributes as keys
+    <FlatList // FlatList is more efficient than ScrollView because  it doesn't automatically render everything, but rather waits until you've scrolled to render
+      numColumns={2} // (optional) 
+      keyExtractor={(item) => item.id} //allows us to have IDs or other attributes as keys 
       data={people}
       renderItem={( {item} ) => (
-        <Text style={styles.item} > {item.name} </Text>
+
+        <TouchableOpacity onPress={() => { // TouchableOpacity allows items to be clicked
+          pressHandler(item.id)}}>
+          <Text style={styles.item} > {item.name} </Text>
+        </TouchableOpacity>
+
     )} />
       
-      {/* <ScrollView>
-        {people.map(item => ( 
-            <View key={item.key}>
-              <Text style={styles.item} > {item.name} </Text>
-            </View>
-        ))}
-      </ScrollView> */}
     </View>
   );
 }
@@ -49,7 +54,8 @@ const styles = StyleSheet.create({
     marginTop: 24,
     padding: 30,
     backgroundColor: "pink",
-    fontSize: 24
+    fontSize: 24,
+    margin: 10,
   }
 
 });
