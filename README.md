@@ -1,6 +1,7 @@
 # ReactNativeTutorial
 Following The Net Ninjas tutorial to create a React Native app.
 
+
 ----
 
 React Native FlexBox
@@ -11,3 +12,16 @@ container: {
     justifyContent: // values same as web, but with camelCase 
     alignItems: // values same as web, but with camelCase 
 },
+
+
+----
+
+
+https://expo.github.io/vector-icons/  <-- Vector image directory
+
+import { MaterialIcons } from "@expo/vector-icons";  <-- Make import to use the directory
+
+Example: <MaterialIcons name="delete" size={18} color="red" />
+
+
+----
