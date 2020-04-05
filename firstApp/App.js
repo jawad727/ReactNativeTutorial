@@ -67,7 +67,15 @@ const styles = StyleSheet.create({
   },
   content: {
     padding: 40,
-    // marginLeft: 10
+    // backgroundColor: "red",
+    flex: 1
+  },
+  list: {
+    // backgroundColor: "blue",
+    borderTopWidth: 1,
+    borderColor: "lightgrey",
+    marginTop: 10,
+    flex: 1
   }
 
 
